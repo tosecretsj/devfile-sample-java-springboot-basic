@@ -21,7 +21,7 @@ COPY src src
 RUN mvn package -Dmaven.test.skip=true
 
 #FROM openjdk:11-jdk
-FROM openjdk:20-jdk-slim
+FROM quay.io/devfile/maven:3.8.1-openjdk-17-slim
 COPY --from=0 /build/target/demo-0.0.1-SNAPSHOT.jar /app/target/demo-0.0.1-SNAPSHOT.jar
 
 EXPOSE 8081
